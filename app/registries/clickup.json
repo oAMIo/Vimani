@@ -1,0 +1,47 @@
+{
+  "tool_key": "clickup",
+  "version": "v1",
+  "operations": [
+    {
+      "op_id": "clickup.space.create",
+      "description": "Create a space",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" }
+        },
+        "required": ["name"]
+      },
+      "produces": ["space_id"],
+      "requires": ["workspace_id"]
+    },
+    {
+      "op_id": "clickup.folder.create",
+      "description": "Create a folder in a space",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" }
+        },
+        "required": ["name"]
+      },
+      "produces": ["folder_id"],
+      "requires": ["space_id"]
+    },
+    {
+      "op_id": "clickup.list.create",
+      "description": "Create a list in a folder",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" }
+        },
+        "required": ["name"]
+      },
+      "produces": ["list_id"],
+      "requires": ["folder_id"]
+    }
+  ]
+}
+
+
